@@ -111,12 +111,20 @@ def run():
         PTI = 0.3
         monthly_capacity = income * PTI
 
-        tenor = max(1, min(df['bnpl_installments'].iloc[0], 6))
+        cluster = df['cluster'].iloc[0]
+        requested_tenor = df['bnpl_installments'].iloc[0]
+        if cluster == 0:        # Low Risk
+            max_tenor = 12
+        elif cluster == 1:      # Potential Risk
+            max_tenor = 9
+        else:                   # High Risk
+            max_tenor = 6
+
+        tenor = max(1, min(requested_tenor, max_tenor))
+
         base_limit = monthly_capacity * tenor
 
         risk_factor = max(0.3, 1 - prob)
-
-        cluster = df['cluster'].iloc[0]
 
         if cluster == 0:
             cluster_factor = 1.2
