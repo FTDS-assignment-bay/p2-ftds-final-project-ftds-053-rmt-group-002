@@ -17,7 +17,10 @@
 3. inference.ipynb  
    Notebook for making predictions (inference).
 
-4. deploy/
+4. pipeline_DAG.py
+   Apache Airflow DAG for ETL automation pipeline
+
+5. deploy/
    ├── Dockerfile           Container configuration file.
    ├── requirements.txt     Project dependencies.
    └── src/
@@ -25,7 +28,7 @@
        ├── eda.py           Exploratory Data Analysis (EDA) module.
        └── prediction.py    Prediction module.
 
-5. assets/
+6. assets/
    └── FTDS-053-RMT-GROUP002-LOGO.png       Logo project.
 ```
 
