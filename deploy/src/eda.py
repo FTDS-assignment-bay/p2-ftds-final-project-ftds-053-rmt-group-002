@@ -13,10 +13,12 @@ def load_data():
 
 def run():
     # HEADER
-    st.title('A-Limit')
-    st.subheader('BNPL Credit Risk Analysis Application')
-    st.write('Made by Group 2')
+    st.image(os.path.join(BASE_DIR, "FTDS-053-RMT-GROUP002-LOGO.png"))
 
+    st.title("A-Limit")
+    st.subheader("BNPL Credit Risk Analysis Application")
+    st.caption("Made by Group 2")
+    
     df = load_data()
 
     st.markdown('---') 
