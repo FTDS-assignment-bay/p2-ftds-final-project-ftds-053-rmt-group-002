@@ -80,8 +80,12 @@ def cleanData():
     #handle missing value
     
     df['repayment_delay_days'] = df['repayment_delay_days'].fillna(0)
-
-    df['customer_segment'] = df['customer_segment'].fillna("unknown")
+    df['monthly_income'] = df['monthly_income'].fillna(0)
+    df['credit_score'] = df['credit_score'].fillna(300)
+    
+    
+    cat_cols = df.select_dtypes(include='object').columns
+    df[cat_cols] = df[cat_cols].fillna("unknown")
 
 
     #saving data clean
