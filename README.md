@@ -17,8 +17,11 @@
 3. inference.ipynb  
    Notebook for making predictions (inference).
 
-4. pipeline_DAG.py
-   Apache Airflow DAG for ETL automation pipeline
+4. pipeline
+   ├── .env                      Stores environment variables and sensitive configuration values.
+   ├── airflow_ES.yaml           Docker Compose configuration for Apache Airflow services and orchestration setup.
+   ├── great_expect_data.ipynb   Data validation notebook using Great Expectations for data quality checks.
+   └── pipeline_DAG.py           Apache Airflow DAG for ETL automation pipeline
 
 5. deploy/
    ├── Dockerfile           Container configuration file.
@@ -28,7 +31,15 @@
        ├── eda.py           Exploratory Data Analysis (EDA) module.
        └── prediction.py    Prediction module.
 
-6. assets/
+6. dataset
+   └── Buy_Now_Pay_Later_BNPL_CreditRisk_Dataset.csv     Dataset used for machine learning model.
+
+7. model
+   ├── cluster_model.pkl            Saved clustering model for customer risk segmentation.
+   ├── classification_model.pkl     Trained classification model for default prediction.
+   └── threshold.pkl                Stored optimized probability threshold for approval decision logic.
+
+8. assets/
    └── FTDS-053-RMT-GROUP002-LOGO.png       Logo project.
 ```
 
